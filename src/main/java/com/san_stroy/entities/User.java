@@ -1,15 +1,14 @@
 package com.san_stroy.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -27,7 +26,13 @@ public class User {
     private String email;
     private String password;
     private String phoneNumber;
-    private String role; // CUSTOMER, OPERATOR, ADMIN
+    private String role;
     private boolean isActive;
     private LocalDateTime created_at;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transport> TransportList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Advertisement> AdvertisementList = new ArrayList<>();
 }
