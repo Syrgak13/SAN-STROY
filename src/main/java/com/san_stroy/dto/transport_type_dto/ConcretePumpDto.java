@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 
-public class ConcreatePumpDto extends TransportDto {
+public class ConcretePumpDto extends TransportDto {
 
     private Long id;
 

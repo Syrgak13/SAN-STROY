@@ -1,4 +1,5 @@
 package com.san_stroy.entities.transport_type;
+import com.san_stroy.entities.Transport;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

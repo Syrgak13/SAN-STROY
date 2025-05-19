@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class ConcreateMixerDto extends TransportDto {
+public class ConcreteMixerDto extends TransportDto {
     private Long id;
 
     @NotNull(message ="Drum value can not be empty")
