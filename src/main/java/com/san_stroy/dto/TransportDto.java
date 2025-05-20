@@ -18,7 +18,7 @@ public abstract class TransportDto {
 
     @NotBlank(message = "Status is required")
     @Size(min = 3, max = 20, message = "Status must be between 3 and 20 characters")
-    private String status; // AVAILABLE, BUSY, INACTIVE
+    private String status;
     private String brand;
 
     @NotNull(message = "year can not be empty")
