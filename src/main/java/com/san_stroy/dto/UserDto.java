@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Normalized;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,6 +21,10 @@ public class UserDto {
     @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters")
     private String firstName;
     private String lastName;
+
+    @NotBlank
+    @Size(min = 4, max = 14)
+    private String username;
 
     @NotNull(message = "Email cannot be null")
     @Size(min = 5, max = 50, message = "Email must be between 5 and 50 characters")
