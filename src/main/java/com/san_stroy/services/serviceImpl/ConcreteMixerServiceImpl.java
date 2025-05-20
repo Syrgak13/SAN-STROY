@@ -13,7 +13,7 @@ import java.util.List;
 public class ConcreteMixerServiceImpl implements ConcreteMixerService {
 
     @Override
-    public List<ConcreteMixerDto> findAllConcreteMixer() {
+    public List<ConcreteMixerDto> findAllConcreteMixers() {
         return List.of();
     }
 

@@ -19,7 +19,7 @@ public class CraneServiceImpl implements CraneService {
 
 
     @Override
-    public List<CraneDto> findAllCrane() {
+    public List<CraneDto> findAllCranes() {
         return List.of();
     }
 

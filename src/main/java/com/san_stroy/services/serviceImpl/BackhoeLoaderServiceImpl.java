@@ -1,6 +1,5 @@
 package com.san_stroy.services.serviceImpl;
 
-import com.san_stroy.dto.TransportDto;
 import com.san_stroy.dto.transport_type_dto.BackhoeLoaderDto;
 import com.san_stroy.mappers.transport_type_mappers.BackhoeLoaderMapper;
 import com.san_stroy.repositories.transport_type_repository.BackhoeLoaderRepository;

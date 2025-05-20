@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CraneService{
 
-    List<CraneDto> findAllCrane();
+    List<CraneDto> findAllCranes();
 
     CraneDto findCraneById(Long id);
 

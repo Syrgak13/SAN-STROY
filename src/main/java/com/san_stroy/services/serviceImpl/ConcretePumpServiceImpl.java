@@ -13,7 +13,7 @@ import java.util.List;
 public class ConcretePumpServiceImpl implements ConcretePumpService {
 
     @Override
-    public List<ConcretePumpDto> findAllConcretePump() {
+    public List<ConcretePumpDto> findAllConcretePumps() {
         return List.of();
     }
 

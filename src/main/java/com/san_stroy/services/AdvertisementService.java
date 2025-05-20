@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AdvertisementService {
 
-    List<AdvertisementDto> getAllAdvertisement();
+    List<AdvertisementDto> getAllAdvertisements();
 
     AdvertisementDto getAdvertisementById(Long id);
 

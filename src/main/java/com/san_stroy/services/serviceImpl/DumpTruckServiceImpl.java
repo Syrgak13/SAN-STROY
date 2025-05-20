@@ -13,7 +13,7 @@ import java.util.List;
 public class DumpTruckServiceImpl implements DumpTruckService {
 
     @Override
-    public List<DumpTruckDto> findDumpTruck() {
+    public List<DumpTruckDto> findDumpTrucks() {
         return List.of();
     }
 

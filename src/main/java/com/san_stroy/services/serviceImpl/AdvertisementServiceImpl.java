@@ -23,7 +23,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     private final TransportMapper transportMapper;
 
     @Override
-    public List<AdvertisementDto> getAllAdvertisement() {
+    public List<AdvertisementDto> getAllAdvertisements() {
         return advertisementRepository
                 .findAll()
                 .stream()

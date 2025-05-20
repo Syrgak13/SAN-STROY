@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ExcavatorService{
 
-    List<ExcavatorDto> findAllExcavator();
+    List<ExcavatorDto> findAllExcavators();
 
     ExcavatorDto findExcavatorById(Long id);
 

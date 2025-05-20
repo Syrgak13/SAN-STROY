@@ -13,7 +13,7 @@ import java.util.List;
 public class ExcavatorServiceImpl implements ExcavatorService {
 
     @Override
-    public List<ExcavatorDto> findAllExcavator() {
+    public List<ExcavatorDto> findAllExcavators() {
         return List.of();
     }
 

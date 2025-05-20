@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DumpTruckService{
 
-    List<DumpTruckDto> findDumpTruck();
+    List<DumpTruckDto> findDumpTrucks();
 
     DumpTruckDto findDumpTruckById(Long id);
 

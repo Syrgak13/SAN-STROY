@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ConcreteMixerService{
 
-    List<ConcreteMixerDto> findAllConcreteMixer();
+    List<ConcreteMixerDto> findAllConcreteMixers();
 
     ConcreteMixerDto findConcreteMixerById(Long id);
 
