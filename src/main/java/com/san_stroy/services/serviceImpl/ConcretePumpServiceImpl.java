@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ConcretePumpServiceImpl implements ConcretePumpService {
+
     @Override
     public List<ConcretePumpDto> findAllConcretePump() {
         return List.of();
@@ -33,31 +34,6 @@ public class ConcretePumpServiceImpl implements ConcretePumpService {
 
     @Override
     public ConcretePumpDto deleteConcretePump(Long id) {
-        return null;
-    }
-
-    @Override
-    public List<TransportDto> getAllTransports() {
-        return List.of();
-    }
-
-    @Override
-    public TransportDto getTransportById(Long id) {
-        return null;
-    }
-
-    @Override
-    public TransportDto addTransport(TransportDto transportDto) {
-        return null;
-    }
-
-    @Override
-    public TransportDto updateTransport(Long id, TransportDto transportDto) {
-        return null;
-    }
-
-    @Override
-    public TransportDto deleteTransport(Long id) {
         return null;
     }
 }

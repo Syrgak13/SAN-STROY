@@ -4,7 +4,7 @@ import com.san_stroy.dto.transport_type_dto.ConcreteMixerDto;
 
 import java.util.List;
 
-public interface ConcreteMixerService extends TransportService{
+public interface ConcreteMixerService{
 
     List<ConcreteMixerDto> findAllConcreteMixer();
 

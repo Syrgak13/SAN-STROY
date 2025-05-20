@@ -4,7 +4,7 @@ import com.san_stroy.dto.transport_type_dto.BackhoeLoaderDto;
 
 import java.util.List;
 
-public interface BackhoeLoaderService extends TransportService{
+public interface BackhoeLoaderService {
 
     List<BackhoeLoaderDto> findAllBackhoeLoaders();
 

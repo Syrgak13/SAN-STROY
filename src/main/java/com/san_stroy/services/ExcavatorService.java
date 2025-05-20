@@ -5,7 +5,7 @@ import com.san_stroy.dto.transport_type_dto.ExcavatorDto;
 
 import java.util.List;
 
-public interface ExcavatorService extends TransportService{
+public interface ExcavatorService{
 
     List<ExcavatorDto> findAllExcavator();
 

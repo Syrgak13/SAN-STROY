@@ -17,6 +17,7 @@ public class BackhoeLoaderServiceImpl implements BackhoeLoaderService {
     private final BackhoeLoaderRepository backhoeLoaderRepository;
     private final BackhoeLoaderMapper backhoeLoaderMapper;
 
+
     @Override
     public List<BackhoeLoaderDto> findAllBackhoeLoaders() {
         return List.of();
@@ -39,31 +40,6 @@ public class BackhoeLoaderServiceImpl implements BackhoeLoaderService {
 
     @Override
     public BackhoeLoaderDto deleteBackhoeLoader(Long id) {
-        return null;
-    }
-
-    @Override
-    public List<TransportDto> getAllTransports() {
-        return List.of();
-    }
-
-    @Override
-    public TransportDto getTransportById(Long id) {
-        return null;
-    }
-
-    @Override
-    public TransportDto addTransport(TransportDto transportDto) {
-        return null;
-    }
-
-    @Override
-    public TransportDto updateTransport(Long id, TransportDto transportDto) {
-        return null;
-    }
-
-    @Override
-    public TransportDto deleteTransport(Long id) {
         return null;
     }
 }

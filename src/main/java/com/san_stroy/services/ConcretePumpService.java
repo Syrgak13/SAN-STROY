@@ -4,7 +4,7 @@ import com.san_stroy.dto.transport_type_dto.ConcretePumpDto;
 
 import java.util.List;
 
-public interface ConcretePumpService extends TransportService{
+public interface ConcretePumpService{
 
     List<ConcretePumpDto> findAllConcretePump();
 

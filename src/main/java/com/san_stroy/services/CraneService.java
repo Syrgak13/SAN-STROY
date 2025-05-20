@@ -5,7 +5,7 @@ import com.san_stroy.dto.transport_type_dto.CraneDto;
 
 import java.util.List;
 
-public interface CraneService extends TransportService{
+public interface CraneService{
 
     List<CraneDto> findAllCrane();
 

@@ -4,7 +4,7 @@ import com.san_stroy.dto.transport_type_dto.DumpTruckDto;
 
 import java.util.List;
 
-public interface DumpTruckService extends TransportService{
+public interface DumpTruckService{
 
     List<DumpTruckDto> findDumpTruck();
 
