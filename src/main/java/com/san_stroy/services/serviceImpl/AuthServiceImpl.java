@@ -49,7 +49,7 @@ public class AuthServiceImpl implements AuthService {
     public Map<String, String> login(LoginRequest request) {
 
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
 
         User user = (User) authentication.getPrincipal();
         String accessToken = jwtService.generateToken(user);
