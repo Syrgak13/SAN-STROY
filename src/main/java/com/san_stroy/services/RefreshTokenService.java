@@ -6,6 +6,7 @@ import com.san_stroy.entities.User;
 import java.util.Optional;
 
 public interface RefreshTokenService {
+
     RefreshToken createRefreshToken(User user);
 
     Optional<RefreshToken> findByToken(String token);

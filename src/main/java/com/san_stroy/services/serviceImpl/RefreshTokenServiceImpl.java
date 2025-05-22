@@ -4,6 +4,7 @@ package com.san_stroy.services.serviceImpl;
 import com.san_stroy.entities.RefreshToken;
 import com.san_stroy.entities.User;
 import com.san_stroy.repositories.RefreshTokenRepository;
+import com.san_stroy.services.RefreshTokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class RefreshTokenServiceImpl {
+public class RefreshTokenServiceImpl implements RefreshTokenService {
 
     private final RefreshTokenRepository refreshTokenRepository;
 

@@ -17,6 +17,6 @@ public class ConcreteMixer extends Transport {
     @GeneratedValue
 
     private Long id;
-    private double drum_volue;
+    private double drum_value;
 
 }
