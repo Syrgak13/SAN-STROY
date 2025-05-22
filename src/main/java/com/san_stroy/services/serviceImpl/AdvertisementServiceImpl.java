@@ -3,9 +3,7 @@ package com.san_stroy.services.serviceImpl;
 import com.san_stroy.dto.AdvertisementDto;
 import com.san_stroy.entities.Advertisement;
 import com.san_stroy.mappers.AdvertisementMapper;
-import com.san_stroy.mappers.TransportMapper;
 import com.san_stroy.repositories.AdvertisementRepository;
-import com.san_stroy.repositories.TransportRepository;
 import com.san_stroy.services.AdvertisementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,8 +17,6 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     private final AdvertisementMapper advertisementMapper;
     private final AdvertisementRepository advertisementRepository;
-    private final TransportRepository transportRepository;
-    private final TransportMapper transportMapper;
 
     @Override
     public List<AdvertisementDto> getAllAdvertisements() {

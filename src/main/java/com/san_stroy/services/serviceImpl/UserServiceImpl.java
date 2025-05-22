@@ -1,6 +1,5 @@
 package com.san_stroy.services.serviceImpl;
 
-import com.san_stroy.configs.PasswordEncoder;
 import com.san_stroy.dto.UserDto;
 import com.san_stroy.entities.User;
 import com.san_stroy.mappers.UserMapper;
@@ -19,7 +18,6 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<UserDto> findAllUsers() {
@@ -63,5 +61,30 @@ public class UserServiceImpl implements UserService {
 
         userRepository.delete(deletedUser);
         return userMapper.toDto(deletedUser);
+    }
+
+    @Override
+    public UserDto findUserByEmail(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User with email: " + email + " not found."));
+        return userMapper.toDto(user);
+    }
+
+    @Override
+    public UserDto updateUserByEmail(String email, UserDto userDto) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User with email: " + email + " not found."));
+
+        userMapper.updateUserFromMapper(userDto, user);
+        User updatedUser = userRepository.save(user);
+        return userMapper.toDto(updatedUser);
+    }
+
+    @Override
+    public void deleteUserByEmail(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User with email: " + email + " not found."));
+
+        userRepository.delete(user);
     }
 }

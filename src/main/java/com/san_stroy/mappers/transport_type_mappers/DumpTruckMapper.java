@@ -10,7 +10,7 @@ import org.mapstruct.MappingTarget;
 public interface DumpTruckMapper {
 
     DumpTruckDto toDto(DumpTruck dumpTruck);
-    DumpTruckMapper toEntity(DumpTruckDto dumpTruckDto);
+    DumpTruck toEntity(DumpTruckDto dumpTruckDto);
 
     @Mapping(target = "id", ignore = true)
     void updateDumpTruckFromMapper(DumpTruckDto dumpTruckDto, @MappingTarget DumpTruck dumpTruck);

@@ -15,4 +15,12 @@ public interface UserService {
     UserDto updateUser(Long id, UserDto userDto);
 
     UserDto deleteUser(Long id);
+
+    UserDto findUserByEmail(String email);
+
+    UserDto updateUserByEmail(String email, UserDto userDto);
+
+    void deleteUserByEmail(String email);
+
+
 }

@@ -12,7 +12,7 @@ public interface BackhoeLoaderService {
 
     BackhoeLoaderDto addBackhoeLoader(BackhoeLoaderDto backhoeLoaderDto);
 
-    BackhoeLoaderDto updateBackhoeLoader(BackhoeLoaderDto backhoeLoaderDto);
+    BackhoeLoaderDto updateBackhoeLoader(Long id, BackhoeLoaderDto backhoeLoaderDto);
 
     BackhoeLoaderDto deleteBackhoeLoader(Long id);
 }
