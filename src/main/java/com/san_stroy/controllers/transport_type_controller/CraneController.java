@@ -2,6 +2,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.CraneDto;
 import com.san_stroy.services.serviceImpl.CraneServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,12 @@ public class CraneController {
     }
 
     @PostMapping
-    public ResponseEntity<CraneDto> createCrane(@RequestBody CraneDto dto) {
+    public ResponseEntity<CraneDto> createCrane(@Valid @RequestBody CraneDto dto) {
         return ResponseEntity.ok(craneService.addCrane(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CraneDto> updateCrane(@PathVariable Long id, @RequestBody CraneDto dto) {
+    public ResponseEntity<CraneDto> updateCrane(@PathVariable Long id, @Valid @RequestBody CraneDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(craneService.updateCrane(id, dto));
     }

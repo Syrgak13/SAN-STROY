@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/advertisement")
 @RequiredArgsConstructor
-@Valid
 public class AdvertisementController {
 
     private final AdvertisementServiceImpl advertisementService;
@@ -40,7 +39,7 @@ public class AdvertisementController {
     }
 
     @PutMapping
-    public ResponseEntity<AdvertisementDto> updateAdvertisement(@PathVariable Long id, @RequestBody AdvertisementDto advertisementDto) {
+    public ResponseEntity<AdvertisementDto> updateAdvertisement(@PathVariable Long id, @Valid @RequestBody AdvertisementDto advertisementDto) {
         return ResponseEntity
                 .ok(advertisementService.updateAdvertisement(id, advertisementDto));
     }

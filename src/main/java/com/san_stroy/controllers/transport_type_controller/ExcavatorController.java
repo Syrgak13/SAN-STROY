@@ -3,6 +3,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.ExcavatorDto;
 import com.san_stroy.services.serviceImpl.ExcavatorServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,12 +28,12 @@ public class ExcavatorController {
     }
 
     @PostMapping
-    public ResponseEntity<ExcavatorDto> createExcavator(@RequestBody ExcavatorDto dto) {
+    public ResponseEntity<ExcavatorDto> createExcavator(@Valid  @RequestBody ExcavatorDto dto) {
         return ResponseEntity.ok(excavatorService.addExcavator(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ExcavatorDto> updateExcavator(@PathVariable Long id, @RequestBody ExcavatorDto dto) {
+    public ResponseEntity<ExcavatorDto> updateExcavator(@PathVariable Long id, @Valid @RequestBody ExcavatorDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(excavatorService.updateExcavator(id, dto));
     }

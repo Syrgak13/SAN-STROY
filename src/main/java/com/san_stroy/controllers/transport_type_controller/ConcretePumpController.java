@@ -2,6 +2,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.ConcretePumpDto;
 import com.san_stroy.services.serviceImpl.ConcretePumpServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,12 @@ public class ConcretePumpController {
     }
 
     @PostMapping
-    public ResponseEntity<ConcretePumpDto> createConcretePump(@RequestBody ConcretePumpDto dto) {
+    public ResponseEntity<ConcretePumpDto> createConcretePump(@Valid  @RequestBody ConcretePumpDto dto) {
         return ResponseEntity.ok(concretePumpService.addConcretePump(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ConcretePumpDto> updateConcretePump(@PathVariable Long id, @RequestBody ConcretePumpDto dto) {
+    public ResponseEntity<ConcretePumpDto> updateConcretePump(@PathVariable Long id, @Valid @RequestBody ConcretePumpDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(concretePumpService.updateConcretePump(id, dto));
     }

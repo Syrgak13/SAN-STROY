@@ -26,12 +26,12 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping("/refresh")
-    public ResponseEntity<?> refresh(@RequestBody Map<String, String> request) {
+    public ResponseEntity<?> refresh(@Valid @RequestBody Map<String, String> request) {
         return ResponseEntity.ok(Map.of("accessToken", authService.refreshToken(request.get("refreshToken"))));
     }
 }

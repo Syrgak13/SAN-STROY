@@ -2,6 +2,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.ConcreteMixerDto;
 import com.san_stroy.services.serviceImpl.ConcreteMixerServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,12 +28,12 @@ public class ConcreteMixerController {
     }
 
     @PostMapping
-    public ResponseEntity<ConcreteMixerDto> createConcreteMixer(@RequestBody ConcreteMixerDto dto) {
+    public ResponseEntity<ConcreteMixerDto> createConcreteMixer(@Valid  @RequestBody ConcreteMixerDto dto) {
         return ResponseEntity.ok(concreteMixerService.addConcreteMixer(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ConcreteMixerDto> updateConcreteMixer(@PathVariable Long id, @RequestBody ConcreteMixerDto dto) {
+    public ResponseEntity<ConcreteMixerDto> updateConcreteMixer(@PathVariable Long id, @Valid @RequestBody ConcreteMixerDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(concreteMixerService.updateConcreteMixer(id, dto));
     }

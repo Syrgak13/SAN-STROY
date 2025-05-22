@@ -2,6 +2,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.BackhoeLoaderDto;
 import com.san_stroy.services.serviceImpl.BackhoeLoaderServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,12 @@ public class BackhoeLoaderController {
     }
 
     @PostMapping
-    public ResponseEntity<BackhoeLoaderDto> createBackhoeLoader(@RequestBody BackhoeLoaderDto dto) {
+    public ResponseEntity<BackhoeLoaderDto> createBackhoeLoader(@Valid @RequestBody BackhoeLoaderDto dto) {
         return ResponseEntity.ok(backhoeLoaderService.addBackhoeLoader(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BackhoeLoaderDto> updateBackhoeLoader(@PathVariable Long id, @RequestBody BackhoeLoaderDto dto) {
+    public ResponseEntity<BackhoeLoaderDto> updateBackhoeLoader(@PathVariable Long id, @Valid @RequestBody BackhoeLoaderDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(backhoeLoaderService.updateBackhoeLoader(id, dto));
     }

@@ -2,18 +2,20 @@ package com.san_stroy.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Builder
+@SuperBuilder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public abstract class Transport {
     @GeneratedValue
     @Id
@@ -27,9 +29,10 @@ public abstract class Transport {
     private double  width;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private User owner;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(mappedBy = "transport")
     private List<Advertisement> advertisements = new ArrayList<>();
 }
+

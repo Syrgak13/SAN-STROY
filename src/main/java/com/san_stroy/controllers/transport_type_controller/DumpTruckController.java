@@ -2,6 +2,7 @@ package com.san_stroy.controllers.transport_type_controller;
 
 import com.san_stroy.dto.transport_type_dto.DumpTruckDto;
 import com.san_stroy.services.serviceImpl.DumpTruckServiceImpl;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,12 @@ public class DumpTruckController {
     }
 
     @PostMapping
-    public ResponseEntity<DumpTruckDto> createDumpTruck(@RequestBody DumpTruckDto dto) {
+    public ResponseEntity<DumpTruckDto> createDumpTruck(@Valid @RequestBody DumpTruckDto dto) {
         return ResponseEntity.ok(dumpTruckService.addDumpTruck(dto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<DumpTruckDto> updateDumpTruck(@PathVariable Long id, @RequestBody DumpTruckDto dto) {
+    public ResponseEntity<DumpTruckDto> updateDumpTruck(@PathVariable Long id, @Valid @RequestBody DumpTruckDto dto) {
         dto.setId(id);
         return ResponseEntity.ok(dumpTruckService.updateDumpTruck(id, dto));
     }

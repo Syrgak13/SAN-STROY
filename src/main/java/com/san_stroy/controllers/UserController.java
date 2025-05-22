@@ -3,6 +3,7 @@ package com.san_stroy.controllers;
 
 import com.san_stroy.dto.UserDto;
 import com.san_stroy.services.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,13 +33,13 @@ public class UserController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<UserDto> addUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> addUser(@Valid @RequestBody UserDto userDto) {
         return ResponseEntity.ok(userService.addUser(userDto));
     }
 
     @PutMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @Valid @RequestBody UserDto userDto) {
         return ResponseEntity.ok(userService.updateUser(id, userDto));
     }
 
@@ -55,7 +56,7 @@ public class UserController {
 
     @PutMapping("/me")
     public ResponseEntity<UserDto> updateCurrentUser(@AuthenticationPrincipal UserDetails userDetails,
-                                                     @RequestBody UserDto userDto) {
+                                                     @Valid @RequestBody UserDto userDto) {
         return ResponseEntity.ok(userService.updateUserByEmail(userDetails.getUsername(), userDto));
     }
 
